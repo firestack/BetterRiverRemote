@@ -1,0 +1,361 @@
+/*
+
+	zenlike1.0 by nodethirtythree design
+	http://www.nodethirtythree.com
+
+*/
+
+*
+{
+padding: 0em;
+margin: 0em;
+}
+
+body
+{
+background: #CCCCCC;
+padding: 0em 0em 1em 0em;
+min-width: 240px;
+}
+
+body, input
+{
+font-size: 10pt;
+font-family: "georgia", "times new roman", serif;
+color: #333333;
+}
+
+p
+{
+line-height: 1.5em;
+margin-bottom: 1.0em;
+text-align: justify;
+}
+
+a
+{
+color: #B96D00;
+text-decoration: none;
+}
+
+a:hover
+{
+text-decoration: underline;
+}
+
+.inline
+{
+display: inline;
+}
+
+img
+{
+border: solid 1px #6F5230;
+}
+
+img.left
+{
+position: relative;
+float: left;
+margin: 0em 1.8em 1.4em 0em;
+}
+
+img.right
+{
+position: relative;
+float: right;
+margin: 0em 0em 1.8em 1.8em;
+}
+
+#selected
+{
+	background-color:  #CCCCCC;
+	color: #000000;
+}
+
+.divider, .divider_tight
+{
+position: relative;
+background: #fff url('images/border2.gif') repeat-x;
+height: 14px;
+margin: 2.0em 0em 1.5em 0em;
+clear: both;
+}
+
+.divider_tight
+{
+margin: 1.1em 0em 0.1em 0em;
+}
+
+.title
+{
+font-size: 1.8em;
+font-weight: bold;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis; /* doesn't work with Firefox, but should with some devices */
+display: inline;
+padding-right: 34px;
+background-repeat: no-repeat;
+background-position: right;
+background-image: url('images/db1.gif');
+}
+
+.subtitle, .subtitle_empty
+{
+position: relative;
+font-size: 1.0em;
+color: #787878;
+padding-bottom: 1.2em;
+}
+
+.subtitle_empty
+{
+padding-bottom: 0.5em;
+}
+
+.body
+{
+font-size: 1.4em;
+font-weight: normal;
+}
+
+#search
+{
+text-align: right;
+}
+
+#search input.text
+{
+font-size: 1.6em;
+margin-right: 0.5em;
+vertical-align: middle;
+border-top: solid 1px #777777;
+border-right: solid 1px #777777;
+border-bottom: solid 1px #777777;
+border-left: solid 1px #777777;
+padding: 0.15em;
+width: 10.0em;
+}
+
+#search input.submit
+{
+font-size: 1.3em;
+background: #3A3A3A url('images/buttonbg.gif') repeat-x;
+background-size: 100%;
+border: solid 1px #F2F3DE;
+font-weight: bold;
+padding: 0.25em;
+color: #F2F3DE;
+vertical-align: middle;
+}
+
+.post
+{
+clear: both;
+}
+
+.post ul.controls
+{
+clear: both;
+}
+
+.post ul.controls li
+{
+display: inline;
+font-size: 1.2em;
+padding: 0em 0.8em 0em 0.8em;
+}
+
+.post ul.controls li a
+{
+background-repeat: no-repeat;
+background-position: left;
+padding: 0em 1.0em 0em 20px;
+}
+
+.item
+{
+height: 5.0em;
+}
+
+img.item
+{
+position: relative;
+float: left;
+margin: 0em 0.8em 0.0em 0em;
+height: 5em;
+width: 5em;	
+}
+
+.item .title
+{
+color: #aaa;
+display: block;
+padding-right: 0px;
+background-image: url('');
+}
+
+.item ul.controls
+{
+padding-top: 1.0em;
+white-space: nowrap;
+overflow: hidden;
+text-align: right;
+}
+
+.item ul.controls li
+{
+display: inline;
+font-size: 1.6em;
+}
+
+.item ul.controls li a
+{
+padding: 0em 1.0em 0em 1.0em;
+}
+
+ul.linklist
+{
+list-style: none;
+}
+
+ul.linklist li
+{
+line-height: 2.0em;
+}
+
+.pagination
+{
+clear: both;
+text-align: right;
+overflow: hidden;
+}
+
+.pagination li
+{
+display: inline;
+font-size: 1.6em;
+padding: 0em 0.3em 0em 0.3em;
+}
+
+#outer
+{
+z-index: 2;
+position: relative;
+width: 100%;
+max-width: 600px;
+background-color: #fff;
+margin: 0 auto;
+}
+
+#header
+{
+width: 100%;
+height: 4.6em;
+background: #2B2B2B url('images/topbg.gif') repeat-x;
+margin-bottom: 2px;
+}
+
+#headercontent
+{
+bottom: 0em;
+padding: 1.1em 2.0em 1.1em 2.0em;
+white-space: nowrap;
+overflow: hidden;
+font-weight: normal;
+text-align: center;
+}
+
+#headercontent a
+{
+color: #fff;
+font-size: 2.0em;
+}
+
+#headercontent a:hover
+{
+text-decoration: none;
+}
+
+#headercontent a sup
+{
+color: #777;
+}
+
+#menu
+{
+position: relative;
+background: #7F8400 url('images/menubg.gif') repeat-x top left;
+height: 2.5em;
+padding: 0em 0.3em 0em 0.3em;
+margin-bottom: 2px;
+font-size: 1.5em;
+white-space: nowrap;
+overflow: hidden;
+}
+
+.menuitem, .menuitem_active
+{
+height: 100%;
+width: 33%;
+float: left;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+
+.menuitem_active
+{
+font-weight: bold;
+background: #7F8400 url('images/menuactive.gif') repeat-x top left;
+}
+
+.menuitem a, .menuitem_active a
+{
+padding: 0.5em 0.3em 0.9em 0.3em;
+color: #fff;
+text-decoration: none;
+display: block;
+}
+
+.menuitem a:hover, .menuitem_active a:hover
+{
+text-decoration: underline;
+}
+
+#menubottom
+{
+background: #fff url('images/border1.gif') repeat-x;
+height: 14px;
+margin-bottom: 0.8em;
+}
+
+#content
+{
+padding: 0em 0.5em 0em 0.5em;
+}
+
+#footer
+{
+position: relative;
+height: 2.0em;
+clear: both;
+padding-top: 4.0em;
+background: #fff url('images/border2.gif') repeat-x 0em 2.5em;
+font-size: 0.8em;
+}
+
+#footer .left
+{
+position: absolute;
+left: 2.0em;
+bottom: 1.2em;
+}
+
+#footer .right
+{
+position: absolute;
+right: 2.0em;
+bottom: 1.2em;
+}

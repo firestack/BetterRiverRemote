@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<title>WebRemote</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+<link rel="stylesheet" type="text/css" href="default.css" />
+<script type="text/javascript" src="scripts/ajax.js"></script>
+<script type="text/javascript">
+    window.onload = init_playingnow('[Token]');
+</script>
+</head>
+
+<body>
+
+<div id="outer">
+
+	<div id="menu">
+	    <div class="menuitem_active"><a href="playingnow.html">Playing Now</a></div>
+	    <div class="menuitem"><a href="library.html">Library</a></div>
+		<div class="menuitem"><a href="audiodevice.html">Audio Device</a></div>
+	</div>
+	<div id="menubottom"></div>
+	
+	<div id="content">
+	
+		<div id="playingnow" class="post">
+            <div class="title">Playing Now</div>
+    		<div class="subtitle_empty"></div>
+    		<div class="body">
+		        <img id="PlaybackInfo.ImageURL" src="[PlayingFile.ImageLink]" class="left" alt="Playing Track Image" width="220" height="220" />
+		        <strong><div id="PlaybackInfo.Name"></div></strong>
+		        <div id="PlaybackInfo.Artist"></div>
+		        <div id="PlaybackInfo.Album"></div>
+		        <div id="PlaybackInfo.PositionDisplay"></div>
+	        </div>
+		</div>
+        <div class="divider"></div>
+
+		<div id="playbackcontrols" class="post">
+			<div class="title">Control: <div class="inline" id="PlaybackInfo.Status"></div></div>
+		    <div class="subtitle_empty"></div>
+		    <div class="body">
+	            <ul class="linklist">
+		            <li><a href="javascript:download('MCWS/v1/Playback/PlayPause?Token=[Token]')">Play / Pause</a></li>
+			        <li><a href="javascript:download('MCWS/v1/Playback/Stop?Token=[Token]')">Stop</a></li>
+			        <li><a href="javascript:download_refresh('MCWS/v1/Playback/Next?Token=[Token]')">Next</a></li>
+    		        <li><a href="javascript:download_refresh('MCWS/v1/Playback/Previous?Token=[Token]')">Previous</a></li>
+    	        </ul>
+    	    </div>
+        </div>
+		<div class="divider"></div>
+		
+		<div id="volume" class="post">
+			<div class="title">Volume: <div class="inline" id="PlaybackInfo.VolumeDisplay"></div></div>
+			<div class="subtitle_empty"></div>
+			<div class="body">
+			    <ul class="linklist">
+			        <li>
+                        <a href="javascript:download_update_display('MCWS/v1/Playback/Volume?Level=0.00&Token=[Token]')">0%</a>
+			    	    <a href="javascript:download_update_display('MCWS/v1/Playback/Volume?Level=0.06&Token=[Token]')">.</a>
+			    	    <a href="javascript:download_update_display('MCWS/v1/Playback/Volume?Level=0.12&Token=[Token]')">.</a>
+			    	    <a href="javascript:download_update_display('MCWS/v1/Playback/Volume?Level=0.18&Token=[Token]')">.</a>
+			    	    <a href="javascript:download_update_display('MCWS/v1/Playback/Volume?Level=0.24&Token=[Token]')">.</a>
+			    	    <a href="javascript:download_update_display('MCWS/v1/Playback/Volume?Level=0.30&Token=[Token]')">.</a>
+			    	    <a href="javascript:download_update_display('MCWS/v1/Playback/Volume?Level=0.36&Token=[Token]')">.</a>
+			    	    <a href="javascript:download_update_display('MCWS/v1/Playback/Volume?Level=0.42&Token=[Token]')">.</a>
+			    	    <a href="javascript:download_update_display('MCWS/v1/Playback/Volume?Level=0.50&Token=[Token]')">.</a>
+			    	    <a href="javascript:download_update_display('MCWS/v1/Playback/Volume?Level=0.58&Token=[Token]')">.</a>
+			    	    <a href="javascript:download_update_display('MCWS/v1/Playback/Volume?Level=0.64&Token=[Token]')">.</a>
+			    	    <a href="javascript:download_update_display('MCWS/v1/Playback/Volume?Level=0.70&Token=[Token]')">.</a>
+			    	    <a href="javascript:download_update_display('MCWS/v1/Playback/Volume?Level=0.76&Token=[Token]')">.</a>
+			    	    <a href="javascript:download_update_display('MCWS/v1/Playback/Volume?Level=0.82&Token=[Token]')">.</a>
+			    	    <a href="javascript:download_update_display('MCWS/v1/Playback/Volume?Level=0.88&Token=[Token]')">.</a>
+			    	    <a href="javascript:download_update_display('MCWS/v1/Playback/Volume?Level=0.94&Token=[Token]')">.</a>
+			    	    <a href="javascript:download_update_display('MCWS/v1/Playback/Volume?Level=1.00&Token=[Token]')">100%</a>
+			    	</li>
+			    	<li>
+			    	    <a href="javascript:download_update_display('MCWS/v1/Playback/Volume?Level=-0.10&Relative=1&Token=[Token]')">-10%</a>
+			            &nbsp;&nbsp;&nbsp;
+				        <a href="javascript:download_update_display('MCWS/v1/Playback/Volume?Level=-0.01&Relative=1&Token=[Token]')">-1%</a>
+                        &nbsp;&nbsp;&nbsp;
+			    	    <a href="javascript:download_update_display('MCWS/v1/Playback/Volume?Level=0.01&Relative=1&Token=[Token]')">+1%</a>
+			    	    &nbsp;&nbsp;&nbsp;
+		    		    <a href="javascript:download_update_display('MCWS/v1/Playback/Volume?Level=0.1&Relative=1&Token=[Token]')">+10%</a>
+		    		</li>
+		    	</ul>
+		    </div>
+        </div>
+		<div class="divider"></div>
+		
+		<div id="zone" class="post">
+			<div class="title">Zone: [ActiveZoneName]</div>
+			<div class="subtitle_empty"></div>
+			<div class="body">
+			    <ul class="linklist">
+			        <!-- begin: loop(z, 0, [ZoneCount] - 1) -->
+		            <li><a href="javascript:download_refresh('MCWS/v1/Playback/SetZone?Zone=[z]&ZoneType=Index&Token=[Token]')">[Zone([z]).Name]</a></li>
+		            <!-- end: loop -->
+		    	</ul>
+		    </div>
+        </div>
+ 		<div class="divider"></div>
+
+		<div id="fulllist" class="post">
+			<div class="title">Complete List</div>
+			<div class="subtitle_empty"></div>
+			<div class="body">
+			    <ul class="linklist">
+    	            <li><a href="playingnowlist.html">View full Playing Now list</a></li>
+		    	</ul>
+		    </div>
+        </div>
+ 		
+   </div>
+    
+	<div id="footer">
+		<div class="left">&copy; 2014 JRiver, Inc.</div>
+	</div>
+	
+</div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<title>WebRemote</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+<link rel="stylesheet" type="text/css" href="default.css" />
+<script type="text/javascript" src="scripts/ajax.js"></script>
+</head>
+
+<body>
+<div id="outer">
+
+	<div id="menu">
+	    <div class="menuitem_active"><a href="playingnow.html">Playing Now</a></div>
+	    <div class="menuitem"><a href="library.html">Library</a></div>
+		<div class="menuitem"><a href="audiodevice.html">Audio Device</a></div>
+	</div>
+	<div id="menubottom"></div>
+	
+	<div id="content">
+		<div class="post">
+			<div class="title">Playing Now</sup></div>
+			<div class="subtitle">The list of files in the [ActiveZoneName] zone.</div>
+			<div class="body">
+				<ul class="linklist">
+		            <!-- begin: loop(z, 0, [PlayingNowFileCount] - 1) -->
+				    <li><a href="javascript:download('[PlayingNowFile([z]).PlayLink]')">[PlayingNowFile([z]).Artist] - [PlayingNowFile([z]).Name]</a></li>
+	                <!-- end: loop -->
+	            </ul>
+			</div>
+		</div>
+    </div>
+    
+	<div id="footer">
+		<div class="left">&copy; 2014 JRiver, Inc.</div>
+	</div>
+	
+</div>
+
+</body>
+</html>

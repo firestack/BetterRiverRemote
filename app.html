@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Bootstrap config -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Language? -->
+        <meta charset="utf-8">
+
+        <!-- Page Title -->
+        <title>App</title>
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="stylesheets/simplex.min.css" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/rangeslider.css" />
+
+        <!-- User Styles -->
+        <link rel="stylesheet" type="text/css" href="stylesheets/custom.css" />
+
+        <!-- Scripts -->
+        <script type="text/javascript" src="javascripts/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="javascripts/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
+        <script type="text/javascript" src="javascripts/bootbox.min.js"></script>
+        <script type="text/javascript" src="javascripts/rangeslider.min.js"></script>
+
+        <!-- User Scripts -->
+        <script type="text/javascript" src="javascripts/custom.js"></script>
+
+    </head>
+    <body>
+
+        <!-- Main app holder -->
+        <div id="appHolder" class="container-fluid">
+            <!-- Because I can't render files in JRiver  -->
+            <!-- Nav bar -->
+            <nav id="navbar" class="navbar navbar-default">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#">JRiverRem</a>
+                </div>
+              </div>
+            </nav>
+            <!-- App body -->
+            <div id="app">
+                <div id="widgetbox" class="well col-sm-3 text-center">
+                    <!-- Possibly delagate? -->
+                    <div class="row">
+                        <button id="backbutton" class="btn btn-info" data-toggle="button" onclick="javascript:trackPrevious()"><i class="fa fa-backward"></i></button>
+                        <button id="stopbutton" class="btn btn-info" data-toggle="button" onclick="javascript:playStop()"><i class="fa fa-stop"></i></button>
+                        <button id="playbutton" class="btn btn-info" data-toggle="button" onclick="javascript:togglePlayPause()"><i class="fa fa-play"></i></button>
+                        <button id="forwardbutton" class="btn btn-info" data-toggle="button" onclick="javascript:trackNext()"><i class="fa fa-forward"></i></button>
+                    </div>
+                    <div class="row">
+                        <input type="range" name="name" value="">
+
+                    </div>
+                </div>
+
+
+
+            </div>
+            <!-- Footer -->
+            <div id="footer" class="">
+
+            </div>
+        </div>
+
+    </body>
+</html>

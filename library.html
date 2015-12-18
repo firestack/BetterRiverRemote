@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<title>WebRemote</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+<link rel="stylesheet" type="text/css" href="default.css" />
+<script type="text/javascript" src="scripts/ajax.js"></script>
+</head>
+
+<body>
+<div id="outer">
+
+	<div id="menu">
+		<div class="menuitem"><a href="playingnow.html">Playing Now</a></div>
+		<div class="menuitem_active"><a href="library.html">Library</a></div>
+		<div class="menuitem"><a href="audiodevice.html">Audio Device</a></div>
+	</div>
+	<div id="menubottom"></div>
+
+	<div id="content">
+		<div class="items" id="normalcontent">
+
+ 	    <!-- begin: if([ShowSearch]) -->
+            <form method="get" action="search.html">
+                <div id="search">
+                    <input type="text" class="text" maxlength="64" name="query" />
+                    <input type="submit" class="submit" value="Search" />
+                </div>
+            </form>
+	        <div class="divider_tight"></div>
+	    <!-- end: if -->
+	    
+	    <!-- begin: if([Pagination.ShowControls([LibraryItemCount])]) -->
+	        <div class="pagination">
+	            [Pagination.Controls([LibraryItemCount])]
+	        </div>
+		    <div class="divider_tight"></div>
+	    <!-- end: if -->
+
+	    <!-- begin: loop(z, [Pagination.StartIndex],  min([Pagination.FinishIndex], [LibraryItemCount] - 1)) -->
+			<div class="item">
+				<a href="[LibraryItem([z]).IntoLink]"><img src="[LibraryItem([z]).ImageLink]&Width=64&Height=64&Square=1&FillTransparency=FFFFFF" class="item" alt="[LibraryItem([z]).Name] Image" /></a>
+				<div class="title">
+					<a href="[LibraryItem([z]).IntoLink]">[LibraryItem([z]).Name]</a>
+				</div>
+				<ul class="controls">
+        			<!-- begin: if([LibraryItem([z]).ShowPlay]) -->
+					    <li><a href="javascript:download_jump_playing_now('[LibraryItem([z]).PlayLink]')">Play</a></li>
+					    <li><a href="javascript:download('[LibraryItem([z]).AddLink]')">Add</a></li>
+					    <li><a href="javascript:download_jump_playing_now('[LibraryItem([z]).ShuffleLink]')">Shuffle</a></li>
+   					<!-- end: if -->
+				</ul>
+			</div>
+			<!-- begin: loop_no_last -->
+				<div class="divider_tight"></div>
+			<!-- end: loop_no_last -->
+		<!-- end: loop -->
+		
+		<!-- begin: if([Pagination.ShowControls([LibraryItemCount])]) -->
+		    <div class="divider_tight"></div>
+	        <div class="pagination">
+	            [Pagination.Controls([LibraryItemCount])]
+	        </div>
+	    <!-- end: if -->
+
+	  	</div>
+	</div>
+	
+	<div id="footer">
+		<div class="left">&copy; 2014 JRiver, Inc.</div>
+	</div>
+	
+</div>
+
+</body>
+</html>

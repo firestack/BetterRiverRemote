@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<title>WebRemote</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+<link rel="stylesheet" type="text/css" href="default.css" />
+<script type="text/javascript" src="scripts/ajax.js"></script>
+</head>
+
+<body>
+<div id="outer">
+
+	<div id="menu">
+	    <div class="menuitem"><a href="playingnow.html">Playing Now</a></div>
+	    <div class="menuitem_active"><a href="library.html">Library</a></div>
+		<div class="menuitem"><a href="audiodevice.html">Audio Device</a></div>
+	</div>
+	<div id="menubottom"></div>
+	
+ 	<div id="content">
+		<div class="items" id="normalcontent">
+		
+		<!-- begin: if([Pagination.ShowControls([LibraryFilesCount])]) -->
+	        <div class="pagination">
+	            [Pagination.Controls([LibraryFilesCount])]
+	        </div>
+		    <div class="divider_tight"></div>
+	    <!-- end: if -->
+		
+		<!-- begin: loop(z, [Pagination.StartIndex], min([Pagination.FinishIndex], [LibraryFilesCount] - 1)) -->
+		    <div class="item">
+	            <a href="[LibraryFile([z]).IntoLink]"><img src="[LibraryFile([z]).ImageLink]&Width=64&Height=64&Square=1&FillTransparency=FFFFFF" class="item" alt="[LibraryFile([z]).Name] Image" /></a>
+	            <div class="title">
+			        <a href="[LibraryFile([z]).IntoLink]">[LibraryFile([z]).Name]</a>
+			    </div>
+			    <ul class="controls">
+			        <li><a href="javascript:download_jump_playing_now('[LibraryFile([z]).PlayLink]')">Play</a></li>
+			        <li><a href="javascript:download('[LibraryFile([z]).AddLink]')">Add</a></li>
+			    </ul>
+		    </div>
+		    <!-- begin: loop_no_last -->
+                <div class="divider_tight"></div>
+            <!-- end: loop_no_last -->
+		<!-- end: loop -->
+		
+	    <!-- begin: if([Pagination.ShowControls([LibraryFilesCount])]) -->
+	        <div class="divider_tight"></div>
+	        <div class="pagination">
+	            [Pagination.Controls([LibraryFilesCount])]
+	        </div>
+	    <!-- end: if -->
+	    
+		</div>
+     </div>
+        
+	<div id="footer">
+		<div class="left">&copy; 2014 JRiver, Inc.</div>
+	</div>
+	
+</div>
+
+</body>
+</html>
