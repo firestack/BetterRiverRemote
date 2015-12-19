@@ -13,8 +13,9 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="stylesheets/simplex.min.css" />
-        <link rel="stylesheet" type="text/css" href="stylesheets/rangeslider.css" />
+        <!-- <link id="bootstrapstyle" rel="stylesheet" type="text/css" href="stylesheets/darkly.min.css" /> -->
+        <link rel="stylesheet" type="text/css" href="stylesheets/bootstrapslider.min.css" />
+
 
         <!-- User Styles -->
         <link rel="stylesheet" type="text/css" href="stylesheets/custom.css" />
@@ -23,8 +24,12 @@
         <script type="text/javascript" src="javascripts/jquery-2.1.4.min.js"></script>
         <script type="text/javascript" src="javascripts/jquery-ui.min.js"></script>
         <script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
+        <script type="text/javascript" src="reactjs/scripts/react.min.js"></script>
+
         <script type="text/javascript" src="javascripts/bootbox.min.js"></script>
-        <script type="text/javascript" src="javascripts/rangeslider.min.js"></script>
+        <script type="text/javascript" src="javascripts/bootstrapslider.min.js"></script>
+        <!-- <script type="text/javascript" src="javascripts/rangeslider.min.js"></script> -->
+
 
         <!-- User Scripts -->
         <script type="text/javascript" src="javascripts/custom.js"></script>
@@ -47,25 +52,100 @@
                   </button>
                   <a class="navbar-brand" href="#">JRiverRem</a>
                 </div>
+                <div class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Themes <b class="caret"></b></a>
+                      <ul id="themesholder" class="dropdown-menu">
+
+                      </ul>
+                    </li>
+                  </ul>
+                </div><!--/.nav-collapse -->
               </div>
             </nav>
             <!-- App body -->
             <div id="app">
-                <div id="widgetbox" class="well col-sm-3 text-center">
-                    <!-- Possibly delagate? -->
-                    <div class="row">
-                        <button id="backbutton" class="btn btn-info" data-toggle="button" onclick="javascript:trackPrevious()"><i class="fa fa-backward"></i></button>
-                        <button id="stopbutton" class="btn btn-info" data-toggle="button" onclick="javascript:playStop()"><i class="fa fa-stop"></i></button>
-                        <button id="playbutton" class="btn btn-info" data-toggle="button" onclick="javascript:togglePlayPause()"><i class="fa fa-play"></i></button>
-                        <button id="forwardbutton" class="btn btn-info" data-toggle="button" onclick="javascript:trackNext()"><i class="fa fa-forward"></i></button>
-                    </div>
-                    <div class="row">
-                        <input type="range" name="name" value="">
 
+                <div id="widgetbox" class="panel col-sm-3 text-center">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Info</h3>
+                    </div>
+                    <!-- Possibly delagate? -->
+                    <div class="panel-body">
+                        <div class="row">
+
+                            <h3 id="nowplayingtitle"></h3>
+                        </div>
+                        <div class="row">
+                            <a href="#" class="thumbnail"><img id="nowplayingimg" src="" alt="Now Playing" /></a>
+                        </div>
+                        <div class="row">
+                            <div class="">
+                                <p id="nowplayingbitrate"></p>
+                                <p id="nowplayingbitdepth"></p>
+                                <p id="nowplayingsamples"></p>
+                                <p id="nowplayingtrackoftrack"></p>
+                                <!-- <p id="nowplaying"></p> -->
+                            </div>
+                        </div>
                     </div>
                 </div>
 
+                <div id="widgetbox" class="panel col-sm-3 text-center">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Controls</h3>
+                    </div>
+                    <!-- Possibly delagate? -->
+                    <div class="panel-body">
 
+                        <div class="row">
+                            <p>
+                                Volume: <code id="volumeDisplay"></code>
+                            </p>
+                            <input id="volSlider" type="range"/>
+
+                            <!-- Padding -->
+                            <div class="col-xs-12" style="height:20px;"></div>
+                        </div>
+                        <div class="row">
+                            <button id="backbutton" class="btn btn-info" onclick="javascript:trackPrevious()"><i class="fa fa-backward"></i></button>
+                            <button id="stopbutton" class="btn btn-info" onclick="javascript:playStop()"><i class="fa fa-stop"></i></button>
+                            <button id="playbutton" class="btn btn-info" onclick="javascript:togglePlayPause()"><i class="fa fa-play"></i></button>
+                            <button id="forwardbutton" class="btn btn-info" onclick="javascript:trackNext()"><i class="fa fa-forward"></i></button>
+                        </div>
+                        <!-- Padding -->
+                        <div class="col-xs-12" style="height:10px;"></div>
+                        <div class="row">
+                                <button id="backbutton" class="btn btn-info" onclick="javascript:toggleShuffle()"><i class="fa fa-random"></i></button>
+                                <button id="stopbutton" class="btn btn-info" onclick="javascript:toggleRepeat()"><i class="fa fa-repeat"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="widgetbox" class="panel col-sm-3 text-center">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Future</h3>
+                    </div>
+                    <!-- Possibly delagate? -->
+                    <div class="panel-body">
+                        <div class="row">
+                            <h2>Up next: <span id="upnexttitle"/> By: <span id="upnextartist"/> </h2>
+                        </div>
+                        <div class="row">
+                            <a href="#" class="thumbnail"><img id="upnextimg" src="" alt="Now Playing" /></a>
+                        </div>
+                        <div class="row">
+                            <div class="">
+                                <p id="upnextbitrate"></p>
+                                <p id="upnextbitdepth"></p>
+                                <p id="upnextsamples"></p>
+
+                                <!-- <p id="upnext"></p> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
             <!-- Footer -->
